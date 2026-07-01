@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Shermika Kuweju | Global Tourism & Aviation Insights</title>
+    <meta name="description" content="Official travel and tourism blog of Dr. Shermika Kuweju - CMO, aviation executive, and global tourism consultant. Learn about strategic route expansions, cross-marketing, and travel insights.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="scroll-hero-nav">
+
+    <!-- ==========================================
+       1. HEADER / FLOATING NAVIGATION
+       ========================================== -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-badge">S</span>
+                <span class="logo-text">Shermika<span>.</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About Me</a>
+                <a href="blog.html" class="nav-link">Blog & Insights</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-nav-cta">Contact Me</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       2. HERO SECTION WITH MOVING CLOUDS
+       ========================================== -->
+    <section class="hero scroll-hero">
+        <div class="hero-sticky">
+            <!-- Canvas for scroll-based animation -->
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-overlay"></div>
+            
+            <!-- Preload Status Indicator -->
+            <div class="preload-status" id="preloadStatus">
+                <i class="fa-solid fa-circle-notch preload-spinner"></i>
+                <span id="preloadText">Loading aviation visual frames... 0%</span>
+            </div>
+
+            <!-- Welcome Overlay (visible at the top, scrollFraction = 0) -->
+            <div class="welcome-overlay" id="welcomeOverlay">
+                <span class="welcome-tag">Aviation & Tourism Consultant</span>
+                <h1 class="welcome-title">Welcome to our official site</h1>
+                <p class="welcome-subtitle">Navigating airline route development, slot optimizations, and regional B2B tourism partnerships.</p>
+                <div class="welcome-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <a href="about.html" class="btn btn-outline-white">About Us</a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="hero-grid">
+                    
+                    <!-- Left Column: Scroll-based Text Slider -->
+                    <div class="hero-scroll-slider">
+                        <!-- Slide 1 -->
+                        <div class="hero-scroll-slide active">
+                            <span class="slide-tag">Tourism Promotion</span>
+                            <h2 class="slide-title">Explore The World, Live Your Dream</h2>
+                            <p class="slide-desc">Promoting inbound tourism to Sri Lanka and the Maldives through strategic global campaigns and airline network expansion.</p>
+                            <a href="blog-post-1.html" class="btn btn-primary">Read Case Study <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="hero-scroll-slide">
+                            <span class="slide-tag">Aviation Strategy</span>
+                            <h2 class="slide-title">Bridging Continents via Turkish Airlines</h2>
+                            <p class="slide-desc">Establishing robust flight paths, direct operations, and securing critical 5th freedom traffic rights in South Asia.</p>
+                            <a href="blog-post-3.html" class="btn btn-primary">Aviation Insights <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="hero-scroll-slide">
+                            <span class="slide-tag">Executive Leadership</span>
+                            <h2 class="slide-title">Soaring Through the Glass Ceiling</h2>
+                            <p class="slide-desc">Reflections on over two decades of climbing the corporate hierarchy and fostering gender equality in aviation.</p>
+                            <a href="blog-post-2.html" class="btn btn-primary">Leadership Blog <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="hero-scroll-slide">
+                            <span class="slide-tag">Tourism Alliances</span>
+                            <h2 class="slide-title">B2B Cross-Marketing Partnerships</h2>
+                            <p class="slide-desc">Creating double-destination campaigns with embassies, DMCs, and tour operators across Europe and the US.</p>
+                            <a href="blog-post-1.html" class="btn btn-primary">Campaign Details <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="hero-scroll-slide">
+                            <span class="slide-tag">Yield Management</span>
+                            <h2 class="slide-title">Dynamic flexi-pricing systems</h2>
+                            <p class="slide-desc">Leveraging predictive analytics to optimize cabin load factors and ticketing revenue models.</p>
+                            <a href="blog-post-3.html" class="btn btn-primary">Yield Insights <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <!-- Slide 6 (Mobile Only - Promo Card) -->
+                        <div class="hero-scroll-slide mobile-only-slide">
+                            <span class="slide-tag" style="background-color: var(--color-accent); color: white;">Promo Offer</span>
+                            <h2 class="slide-title">B2B Tourism Strategy Session</h2>
+                            <p class="slide-desc">Schedule a private boardroom session to analyze regional route feasibilities, slot applications, and dynamic yield models.</p>
+                            <div class="promo-details" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #e2e8f0;">
+                                    <i class="fa-solid fa-circle-check" style="color: var(--color-primary-light);"></i> Route feasibility & slot advisory
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #e2e8f0;">
+                                    <i class="fa-solid fa-circle-check" style="color: var(--color-primary-light);"></i> Cross-marketing DMC alignments
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #e2e8f0;">
+                                    <i class="fa-solid fa-circle-check" style="color: var(--color-primary-light);"></i> Ticket yield P&L optimizations
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn btn-accent" style="width: 100%;">Claim Free Session <i class="fa-solid fa-paper-plane" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Promo Offer Card -->
+                    <div class="promo-card glass-panel">
+                        <span class="promo-badge">Limited Slots</span>
+                        <div class="promo-title-group">
+                            <span class="promo-tagline">Exclusive Consultancy</span>
+                            <h3>B2B Tourism Strategy Session</h3>
+                        </div>
+
+                        <div class="promo-details">
+                            <div class="promo-item">
+                                <i class="fa-solid fa-circle-check promo-icon"></i>
+                                <div class="promo-item-text">
+                                    <div class="promo-item-title">Route Development</div>
+                                    <div class="promo-item-desc">Aviation feasibility & regulatory approvals analysis.</div>
+                                </div>
+                            </div>
+                            <div class="promo-item">
+                                <i class="fa-solid fa-circle-check promo-icon"></i>
+                                <div class="promo-item-text">
+                                    <div class="promo-item-title">Cross-Marketing Alliances</div>
+                                    <div class="promo-item-desc">Workshops with DMCs, embassies, and global operators.</div>
+                                </div>
+                            </div>
+                            <div class="promo-item">
+                                <i class="fa-solid fa-circle-check promo-icon"></i>
+                                <div class="promo-item-text">
+                                    <div class="promo-item-title">P&L Optimization</div>
+                                    <div class="promo-item-desc">Increase corporate agreements and ticketing yield.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="promo-timer" id="promoTimer">
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="days">02</span>
+                                    <span class="timer-label">Days</span>
+                                </div>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="hours">14</span>
+                                    <span class="timer-label">Hrs</span>
+                                </div>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="minutes">45</span>
+                                    <span class="timer-label">Min</span>
+                                </div>
+                                <div class="timer-unit">
+                                    <span class="timer-num" id="seconds">30</span>
+                                    <span class="timer-label">Sec</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn btn-accent" style="width: 100%; margin-top: 1.5rem;">Claim Free Strategy Session</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       3. SERVICES SECTION
+       ========================================== -->
+    <section class="section-padding services-bg">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">What I Do</span>
+                <h2 class="section-title">Strategic Consulting Services</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">Leveraging over 20 years of airline operations, global marketing, and corporate management experience to drive brand yield and tourism growth.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3 class="service-title">Tourism Marketing</h3>
+                    <p class="service-desc">Strategic promotion of international travel hubs across Europe, US, and Asia through targeted ambassadorial and DMC workshops.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3 class="service-title">Route Development</h3>
+                    <p class="service-desc">Facilitating regulatory coordination, securing fifth-freedom traffic rights, and expanding local flight frequencies.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="service-title">B2B Partnerships</h3>
+                    <p class="service-desc">Forging strong cross-marketing channels between national flag carriers, financial groups, and travel agent associations.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Yield Management</h3>
+                    <p class="service-desc">Optimizing P&L strategies, deploying digital booking systems, and driving corporate sales contract agreements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       4. ABOUT PREVIEW SECTION
+       ========================================== -->
+    <section class="section-padding" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="about-preview-grid">
+                
+                <!-- Lady Picture Column -->
+                <div class="about-img-container">
+                    <div class="about-img-decor"></div>
+                    <div class="about-portrait">
+                        <img src="./assets/images/1.jpg" alt="Dr. Shermika Kuweju Profile Photo">
+                        <div class="about-tag">CMO & Lecturer</div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="about-text-content">
+                    <span class="section-subtitle">Meet The Expert</span>
+                    <h2>Dr. Shermika Kuweju</h2>
+                    <p class="lead-text">Chief Marketing Officer, Strategic Consultant, and former Regional Manager (Sri Lanka & Maldives) for Turkish Airlines.</p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">A Doctorate in Strategic Management and Member of the Chartered Institute of Marketing (MCIM), Dr. Shermika has established major airline platforms, driven revenue growths by 80%, and expanded operations between Sri Lanka and the Maldives.</p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">She has served as a Jury Member of the SLIM National Sales Awards since 2022 and lectured extensively on sales, branding, and strategic business modeling.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-award highlight-icon"></i>
+                            <span class="highlight-text">SLIM Jury Member</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-graduation-cap highlight-icon"></i>
+                            <span class="highlight-text">PhD in Strategic Management</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-plane highlight-icon"></i>
+                            <span class="highlight-text">Global Aviation Leader</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-rocket highlight-icon"></i>
+                            <span class="highlight-text">CMO & Branding Expert</span>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn btn-primary">Read Full Profile <i class="fa-solid fa-circle-user" style="margin-left: 0.5rem;"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       5. BRAND LOGOS TICKER
+       ========================================== -->
+    <section class="logo-ticker-section">
+        <div class="container text-center">
+            <h4 class="ticker-title">Over 20 Years Leading Corporate & Aviation Alliances</h4>
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <!-- Original set -->
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> TURKISH AIRLINES</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-money-bill-trend-up ticker-logo-icon"></i> CEYLON ASSET MGMT</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> OMAN AIR</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> THAI AIRWAYS</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> QATAR AIRWAYS</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-shield-halved ticker-logo-icon"></i> CIS HOLDINGS</div>
+                    <!-- Duplicate set for infinite scroll -->
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> TURKISH AIRLINES</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-money-bill-trend-up ticker-logo-icon"></i> CEYLON ASSET MGMT</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> OMAN AIR</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> THAI AIRWAYS</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-plane ticker-logo-icon"></i> QATAR AIRWAYS</div>
+                    <div class="ticker-logo"><i class="fa-solid fa-shield-halved ticker-logo-icon"></i> CIS HOLDINGS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       6. TESTIMONIALS SECTION
+       ========================================== -->
+    <section class="section-padding testimonials-section">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Testimonials</span>
+                <h2 class="section-title">What Tourism Leaders Say</h2>
+            </div>
+
+            <div class="testimonial-container">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide active">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p class="testimonial-quote">"Dr. Shermika is a visionary leader. During her tenure at Turkish Airlines, she spear-headed international promotions which grew our inbound charter networks from Europe significantly. Her ability to connect airline capacity with local DMCs is outstanding."</p>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80" alt="Executive avatar" class="testimonial-author-avatar">
+                    <div class="testimonial-author-name">Murat Baydar</div>
+                    <div class="testimonial-author-role">Former General Manager, Turkish Airlines</div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p class="testimonial-quote">"Her deep insight into branding, customer patterns, and strategic planning revitalized CAM's digital visibility. She launched our mobile client portal and created highly effective corporate channels."</p>
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80" alt="Executive avatar" class="testimonial-author-avatar">
+                    <div class="testimonial-author-name">Dr. Nuwan Wimalana</div>
+                    <div class="testimonial-author-role">Director & Consultant, Delmage Group</div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p class="testimonial-quote">"Shermika's lecturing style is deeply engaging. She blends advanced business theory with practical aviation examples, mentoring the next generation of sales and branding leaders in South Asia."</p>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80" alt="Executive avatar" class="testimonial-author-avatar">
+                    <div class="testimonial-author-name">Sarah J.</div>
+                    <div class="testimonial-author-role">SLIM National Sales Awards Committee</div>
+                </div>
+            </div>
+
+            <!-- Slider Indicator Dots -->
+            <div class="testimonial-dots" id="testimonialDots"></div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       7. FEATURED DESTINATIONS / CASE STUDIES
+       ========================================== -->
+    <section class="section-padding destinations-section">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Promotional Impact</span>
+                <h2 class="section-title">Key Tourism Corridors</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">Explore the major international markets and travel networks Dr. Shermika has bridged and promoted during her extensive aviation career.</p>
+            </div>
+
+            <div class="destinations-grid">
+                <!-- Card 1 -->
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1588598126707-1b072be2780b?auto=format&fit=crop&w=600&q=80" alt="Sri Lanka Tourism" class="destination-card-img">
+                    <div class="destination-overlay">
+                        <span class="dest-tag">Sri Lanka</span>
+                        <h3 class="dest-title">The Wonders of Ceylon</h3>
+                        <p class="dest-desc">Spearheading campaigns linking European operators directly to local resorts and boutique hotels.</p>
+                        <a href="blog-post-1.html" class="dest-link">View Case Study <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80" alt="Maldives Tourism" class="destination-card-img">
+                    <div class="destination-overlay">
+                        <span class="dest-tag">Maldives</span>
+                        <h3 class="dest-title">Atoll Luxury Escapes</h3>
+                        <p class="dest-desc">Securing airline route expansion and direct passenger corridors for premium vacationers.</p>
+                        <a href="blog-post-1.html" class="dest-link">View Case Study <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80" alt="Turkey Tourism" class="destination-card-img">
+                    <div class="destination-overlay">
+                        <span class="dest-tag">Turkey</span>
+                        <h3 class="dest-title">Bridging East & West</h3>
+                        <p class="dest-desc">Establishing Turkish Airlines brand network and flight frequencies in South Asia.</p>
+                        <a href="blog-post-3.html" class="dest-link">View Case Study <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=600&q=80" alt="Global Routes" class="destination-card-img">
+                    <div class="destination-overlay">
+                        <span class="dest-tag">USA & Europe</span>
+                        <h3 class="dest-title">Transatlantic Networks</h3>
+                        <p class="dest-desc">Managing cross-marketing campaigns with embassies in USA and DMCs across Europe.</p>
+                        <a href="blog-post-2.html" class="dest-link">View Case Study <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       8. FOOTER
+       ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Col 1 -->
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <i class="fa-solid fa-plane-departure" style="color: var(--color-primary-light);"></i>
+                        Shermika<span>Kuweju</span>
+                    </a>
+                    <p class="footer-desc">Dr. Shermika Kuweju is a global aviation leader, CMO, lecturer, and B2B strategic advisor dedicated to developing international tourism corridors.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:shermika_k@hotmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:+94710888881" class="social-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div style="padding-left: 1.5rem;">
+                    <h4 class="footer-column-title">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="blog.html">Blog & Insights</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="footer-column-title">Insights</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="blog-post-1.html">Tourism Promotion</a></li>
+                        <li><a href="blog-post-2.html">Women in Aviation</a></li>
+                        <li><a href="blog-post-3.html">Aviation Route Strategy</a></li>
+                        <li><a href="blog.html">Lecture Notes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="footer-column-title">Newsletter</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to get the latest articles on global tourism trends, marketing strategies, and aviation growth.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Shermika Kuweju. All Rights Reserved. Designed for global impact.</p>
+                <p>
+                    <a href="#" style="margin-right: 1rem;">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Main JavaScript file -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

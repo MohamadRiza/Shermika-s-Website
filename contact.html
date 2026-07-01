@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & FAQs | Dr. Shermika Kuweju</title>
+    <meta name="description" content="Reach out to Dr. Shermika Kuweju for B2B tourism consulting, aviation route development, lecturing sessions, or generic business inquiries.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       1. HEADER / FLOATING NAVIGATION
+       ========================================== -->
+    <header class="header scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-badge">S</span>
+                <span class="logo-text">Shermika<span>.</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Me</a>
+                <a href="blog.html" class="nav-link">Blog & Insights</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-nav-cta">Contact Me</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       2. CONTACT HERO
+       ========================================== -->
+    <section class="about-hero">
+        <div class="cloud-container">
+            <svg class="cloud cloud-1" viewBox="0 0 100 100">
+                <path d="M 20 80 A 15 15 0 0 1 40 80 A 20 20 0 0 1 70 80 A 15 15 0 0 1 85 80 A 10 10 0 0 1 95 80 L 95 90 L 5 90 L 5 80 A 10 10 0 0 1 20 80 Z" />
+            </svg>
+            <svg class="cloud cloud-2" viewBox="0 0 100 100">
+                <path d="M 20 80 A 15 15 0 0 1 40 80 A 20 20 0 0 1 70 80 A 15 15 0 0 1 85 80 A 10 10 0 0 1 95 80 L 95 90 L 5 90 L 5 80 A 10 10 0 0 1 20 80 Z" />
+            </svg>
+        </div>
+        <div class="container text-center">
+            <span class="section-subtitle">Get In Touch</span>
+            <h1 class="section-title">Connect With Me</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">Request a strategy session, schedule a lecture series, or contact me for aviation slot advisory.</p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       3. CONTACT GRID SECTION
+       ========================================== -->
+    <section class="section-padding" style="background-color: var(--color-white);">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Left: Contact Details Info Card -->
+                <div class="contact-info-card glass-panel">
+                    <h3 class="sidebar-title">Contact Information</h3>
+                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-top: 1rem; margin-bottom: 2rem;">If you are a tourism board, DMC representative, or airline executive, reach out directly to schedule a boardroom brief.</p>
+
+                    <div class="contact-info-list">
+                        <!-- Address -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon-wrapper">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-info-details">
+                                <h4>Office Location</h4>
+                                <p>Battaramulla, Colombo, Sri Lanka</p>
+                            </div>
+                        </div>
+                        <!-- Phone -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon-wrapper">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-info-details">
+                                <h4>Phone Connection</h4>
+                                <a href="tel:+94710888881">+94 71 088 8881</a>
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon-wrapper">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-details">
+                                <h4>Email Inquiries</h4>
+                                <a href="mailto:shermika_k@hotmail.com">shermika_k@hotmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links" style="margin-top: 3rem;">
+                        <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn" style="background-color: var(--color-white); color: var(--color-primary);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:shermika_k@hotmail.com" class="social-icon" aria-label="Email" style="background-color: var(--color-white); color: var(--color-primary);"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:+94710888881" class="social-icon" aria-label="Phone" style="background-color: var(--color-white); color: var(--color-primary);"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="contact-form-card glass-panel">
+                    <h3 class="sidebar-title">Send A Message</h3>
+                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-top: 1.5rem; margin-bottom: 2rem;">Please submit the details below. We typically review and respond within 24 business hours.</p>
+
+                    <form class="contact-form-grid" onsubmit="event.preventDefault(); alert('Message sent successfully! Dr. Shermika will contact you shortly.'); this.reset();">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label class="form-label" for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label class="form-label" for="contactEmail">Your Email *</label>
+                            <input type="email" id="contactEmail" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group contact-full-width">
+                            <label class="form-label" for="contactSubject">Area of Interest *</label>
+                            <select id="contactSubject" class="form-control" required style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=%27%230369a1%27 height=%2724%27 viewBox=%270 0 24 24%27 width=%2724%27 xmlns=%27http://www.w3.org/2000/svg%27><path d=%27M7 10l5 5 5-5z%27/></svg>'); background-repeat: no-repeat; background-position: right 1rem center;">
+                                <option value="" disabled selected>Select service</option>
+                                <option value="consultation">B2B Tourism Marketing Consulting</option>
+                                <option value="aviation">Aviation Route Strategy Advisory</option>
+                                <option value="speaking">Lecturing / Speaking Engagement</option>
+                                <option value="general">General Business Inquiry</option>
+                            </select>
+                        </div>
+                        <!-- Message -->
+                        <div class="form-group contact-full-width">
+                            <label class="form-label" for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" rows="6" class="form-control" placeholder="Detail your project or requirements here..." required></textarea>
+                        </div>
+                        <!-- Submit -->
+                        <div class="contact-full-width" style="margin-top: 1rem;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry <i class="fa-solid fa-paper-plane" style="margin-left: 0.5rem;"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       4. FAQ ACCORDION SECTION
+       ========================================== -->
+    <section class="section-padding faq-section">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">Quick answers to queries regarding strategic workshops, aviation slots, and academic modules.</p>
+            </div>
+
+            <div class="faq-container">
+                
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-question">What consulting services do you offer?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p class="faq-answer">Dr. Shermika Kuweju offers strategic B2B advisory services focused on tourism promotion campaigns, joint destination cross-marketing, commercial aviation route development, slot optimizations, and corporate brand management.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-question">Can you assist airlines with regional regulatory approvals?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p class="faq-answer">Yes. Having served as the Regional Manager for Turkish Airlines, District Manager for Oman Air, and Senior Supervisor for Thai Airways across Sri Lanka and the Maldives, she has extensive experience working with Civil Aviation Authorities to secure route capacity, direct operations, and fifth-freedom traffic rights.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-question">Are you available for international lecturing and seminars?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p class="faq-answer">Yes, she is an active lecturer in Sales, Marketing, and Brand Management. She conducts executive masterclasses, university module guest lectures, and tailored corporate boardroom workshops globally.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-question">How can we organize a custom destination marketing workshop?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p class="faq-answer">Please fill out the contact form selecting "B2B Tourism Marketing Consulting." Include details about your organization (e.g. DMC, hotel chain, embassy, or airline) and proposed dates. We will coordinate a feasibility slot to structure a custom brief.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       5. FOOTER
+       ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Col 1 -->
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <i class="fa-solid fa-plane-departure" style="color: var(--color-primary-light);"></i>
+                        Shermika<span>Kuweju</span>
+                    </a>
+                    <p class="footer-desc">Dr. Shermika Kuweju is a global aviation leader, CMO, lecturer, and B2B strategic advisor dedicated to developing international tourism corridors.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:shermika_k@hotmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:+94710888881" class="social-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div style="padding-left: 1.5rem;">
+                    <h4 class="footer-column-title">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="blog.html">Blog & Insights</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="footer-column-title">Insights</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="blog-post-1.html">Tourism Promotion</a></li>
+                        <li><a href="blog-post-2.html">Women in Aviation</a></li>
+                        <li><a href="blog-post-3.html">Aviation Route Strategy</a></li>
+                        <li><a href="blog.html">Lecture Notes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="footer-column-title">Newsletter</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to get the latest articles on global tourism trends, marketing strategies, and aviation growth.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Shermika Kuweju. All Rights Reserved. Designed for global impact.</p>
+                <p>
+                    <a href="#" style="margin-right: 1rem;">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Main JavaScript file -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
