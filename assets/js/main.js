@@ -5,18 +5,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     const backToTopBtn = document.querySelector('.back-to-top');
 
+    let lastScrollY = window.scrollY;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        const currentScrollY = window.scrollY;
+        
+        // Add scrolled background glass styling
+        if (currentScrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
 
-        if (window.scrollY > 500) {
+        // Show header when scrolling up, hide when scrolling down
+        if (currentScrollY > 150) {
+            if (currentScrollY > lastScrollY) {
+                // Scroll down: Hide header (slide up)
+                header.style.transform = 'translateX(-50%) translateY(-150%)';
+            } else {
+                // Scroll up: Show header (slide down to normal position)
+                header.style.transform = 'translateX(-50%) translateY(0)';
+            }
+        } else {
+            // Near top: Show header normal
+            header.style.transform = 'translateX(-50%) translateY(0)';
+        }
+
+        // Back to top button visibility
+        if (currentScrollY > 500) {
             if (backToTopBtn) backToTopBtn.classList.add('visible');
         } else {
             if (backToTopBtn) backToTopBtn.classList.remove('visible');
         }
+
+        lastScrollY = currentScrollY;
     });
 
     if (backToTopBtn) {
@@ -110,49 +131,47 @@ document.addEventListener('DOMContentLoaded', () => {
         // Scroll handler
         const updateScrollVisuals = () => {
             const rect = heroSection.getBoundingClientRect();
+            const isMobile = window.innerWidth <= 1024;
+            
+            // Unified scrollFraction calculation using the sticky container bounds
             const scrollTop = -rect.top;
             const maxScroll = rect.height - window.innerHeight;
-            const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScroll));
+            const scrollFraction = maxScroll > 0 ? Math.max(0, Math.min(1, scrollTop / maxScroll)) : 0;
 
-            // Determine active frame
+            // Draw canvas frame corresponding to page scroll position (updates flight path on both devices)
             const frameIndex = Math.min(frameCount, Math.max(1, Math.floor(scrollFraction * frameCount) + 1));
-            
-            // Draw frame on canvas
             renderFrame(frameIndex);
 
-            const isMobile = window.innerWidth <= 1024;
+            // 1. Welcome Overlay: active from scrollFraction 0 to 0.20 on both desktop and mobile
+            if (welcomeOverlay) {
+                if (scrollFraction < 0.10) {
+                    welcomeOverlay.style.opacity = 1;
+                    welcomeOverlay.style.transform = 'translate(-50%, -50%) scale(1)';
+                    welcomeOverlay.style.pointerEvents = 'auto';
+                    welcomeOverlay.style.visibility = 'visible';
+                } else if (scrollFraction < 0.20) {
+                    const welcomeOpacity = Math.max(0, (0.20 - scrollFraction) / 0.10);
+                    welcomeOverlay.style.opacity = welcomeOpacity;
+                    welcomeOverlay.style.transform = `translate(-50%, -50%) scale(${0.95 + 0.05 * welcomeOpacity})`;
+                    welcomeOverlay.style.pointerEvents = 'none';
+                    welcomeOverlay.style.visibility = 'visible';
+                } else {
+                    welcomeOverlay.style.opacity = 0;
+                    welcomeOverlay.style.transform = 'translate(-50%, -50%) scale(0.95)';
+                    welcomeOverlay.style.pointerEvents = 'none';
+                    welcomeOverlay.style.visibility = 'hidden';
+                }
+            }
 
             if (isMobile) {
-                // Mobile layout: Hide separate promo card, show welcome overlay, then slide card deck
-                // 1. Welcome Overlay: active from scrollFraction 0 to 0.15
-                if (welcomeOverlay) {
-                    if (scrollFraction < 0.10) {
-                        welcomeOverlay.style.opacity = 1;
-                        welcomeOverlay.style.transform = 'translate(-50%, -50%) scale(1)';
-                        welcomeOverlay.style.pointerEvents = 'auto';
-                        welcomeOverlay.style.visibility = 'visible';
-                    } else if (scrollFraction < 0.20) {
-                        const welcomeOpacity = Math.max(0, (0.20 - scrollFraction) / 0.10);
-                        welcomeOverlay.style.opacity = welcomeOpacity;
-                        welcomeOverlay.style.transform = `translate(-50%, -50%) scale(${0.95 + 0.05 * welcomeOpacity})`;
-                        welcomeOverlay.style.pointerEvents = 'none';
-                        welcomeOverlay.style.visibility = 'visible';
-                    } else {
-                        welcomeOverlay.style.opacity = 0;
-                        welcomeOverlay.style.transform = 'translate(-50%, -50%) scale(0.95)';
-                        welcomeOverlay.style.pointerEvents = 'none';
-                        welcomeOverlay.style.visibility = 'hidden';
-                    }
-                }
-
-                // 2. Left Slider (Mobile centered deck): fades in from 0.15 to 0.30
+                // Mobile layout: Left Slider (Horizontal Swipe Carousel) fades in from 0.18 to 0.32
                 if (leftSlider) {
-                    if (scrollFraction < 0.15) {
+                    if (scrollFraction < 0.18) {
                         leftSlider.style.opacity = 0;
                         leftSlider.style.transform = 'translateY(30px) scale(0.98)';
                         leftSlider.style.pointerEvents = 'none';
-                    } else if (scrollFraction < 0.30) {
-                        const leftProgress = (scrollFraction - 0.15) / 0.15;
+                    } else if (scrollFraction < 0.32) {
+                        const leftProgress = (scrollFraction - 0.18) / 0.14;
                         leftSlider.style.opacity = leftProgress;
                         leftSlider.style.transform = `translateY(${30 - 30 * leftProgress}px) scale(${0.98 + 0.02 * leftProgress})`;
                         leftSlider.style.pointerEvents = 'auto';
@@ -162,51 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         leftSlider.style.pointerEvents = 'auto';
                     }
                 }
-
-                // 3. Slide index mapping for mobile [0.25, 1.0] (Slides 1 to 6)
-                if (scrollSlides.length > 0) {
-                    const visibleSlides = Array.from(scrollSlides).filter(slide => {
-                        return window.getComputedStyle(slide).display !== 'none';
-                    });
-                    
-                    if (visibleSlides.length > 0) {
-                        const totalSlides = visibleSlides.length;
-                        const leftFraction = Math.max(0, Math.min(1, (scrollFraction - 0.25) / 0.75));
-                        const activeSlideIdx = Math.min(totalSlides - 1, Math.floor(leftFraction * totalSlides));
-                        
-                        visibleSlides.forEach((slide, idx) => {
-                            slide.classList.remove('active', 'exited');
-                            if (idx === activeSlideIdx) {
-                                slide.classList.add('active');
-                            } else if (idx < activeSlideIdx) {
-                                slide.classList.add('exited');
-                            }
-                        });
-                    }
-                }
             } else {
                 // Desktop layout: Welcome overlay, then Right Promo Card, then Left Slider
-                // 1. Welcome Overlay: active from scrollFraction 0 to 0.15
-                if (welcomeOverlay) {
-                    if (scrollFraction < 0.10) {
-                        welcomeOverlay.style.opacity = 1;
-                        welcomeOverlay.style.transform = 'translate(-50%, -50%) scale(1)';
-                        welcomeOverlay.style.pointerEvents = 'auto';
-                        welcomeOverlay.style.visibility = 'visible';
-                    } else if (scrollFraction < 0.20) {
-                        const welcomeOpacity = Math.max(0, (0.20 - scrollFraction) / 0.10);
-                        welcomeOverlay.style.opacity = welcomeOpacity;
-                        welcomeOverlay.style.transform = `translate(-50%, -50%) scale(${0.95 + 0.05 * welcomeOpacity})`;
-                        welcomeOverlay.style.pointerEvents = 'none';
-                        welcomeOverlay.style.visibility = 'visible';
-                    } else {
-                        welcomeOverlay.style.opacity = 0;
-                        welcomeOverlay.style.transform = 'translate(-50%, -50%) scale(0.95)';
-                        welcomeOverlay.style.pointerEvents = 'none';
-                        welcomeOverlay.style.visibility = 'hidden';
-                    }
-                }
-
                 // 2. Right Promo Card: fades in from 0.15 to 0.30
                 if (promoCard) {
                     if (scrollFraction < 0.15) {
@@ -266,6 +242,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         };
+
+        // Mobile swipe carousel scroll listener
+        if (leftSlider) {
+            leftSlider.addEventListener('scroll', () => {
+                const isMobile = window.innerWidth <= 1024;
+                if (!isMobile) return;
+                
+                const sliderWidth = leftSlider.clientWidth;
+                const scrollLeft = leftSlider.scrollLeft;
+                const visibleSlides = Array.from(scrollSlides).filter(slide => {
+                    return window.getComputedStyle(slide).display !== 'none';
+                });
+                
+                if (visibleSlides.length > 0) {
+                    const centerOffset = scrollLeft + sliderWidth / 2;
+                    let closestIdx = 0;
+                    let minDistance = Infinity;
+                    
+                    visibleSlides.forEach((slide, idx) => {
+                        const slideLeft = slide.offsetLeft;
+                        const slideCenter = slideLeft + slide.clientWidth / 2;
+                        const distance = Math.abs(centerOffset - slideCenter);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestIdx = idx;
+                        }
+                    });
+                    
+                    visibleSlides.forEach((slide, idx) => {
+                        slide.classList.remove('active', 'exited');
+                        if (idx === closestIdx) {
+                            slide.classList.add('active');
+                        } else if (idx < closestIdx) {
+                            slide.classList.add('exited');
+                        }
+                    });
+                    
+                    // Render background frame relative to active swipe slide!
+                    const fraction = closestIdx / (visibleSlides.length - 1);
+                    const frameIndex = Math.min(frameCount, Math.max(1, Math.floor(fraction * (frameCount - 1)) + 1));
+                    renderFrame(frameIndex);
+                }
+            });
+        }
 
         // Preload all frames
         for (let i = 1; i <= frameCount; i++) {
