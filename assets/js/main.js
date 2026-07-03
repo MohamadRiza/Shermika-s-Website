@@ -163,6 +163,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Skip Button: visible until the hero section is finished (scrollFraction > 0.90)
+            const skipHeroBtn = document.querySelector('.mobile-skip-hero');
+            if (skipHeroBtn) {
+                if (scrollFraction < 0.90) {
+                    skipHeroBtn.style.opacity = 1;
+                    skipHeroBtn.style.pointerEvents = 'auto';
+                    skipHeroBtn.style.visibility = 'visible';
+                } else {
+                    const buttonOpacity = Math.max(0, (1.00 - scrollFraction) / 0.10);
+                    skipHeroBtn.style.opacity = buttonOpacity;
+                    if (buttonOpacity > 0) {
+                        skipHeroBtn.style.pointerEvents = 'auto';
+                        skipHeroBtn.style.visibility = 'visible';
+                    } else {
+                        skipHeroBtn.style.pointerEvents = 'none';
+                        skipHeroBtn.style.visibility = 'hidden';
+                    }
+                }
+            }
+
             if (isMobile) {
                 // Mobile layout: Left Slider (Horizontal Swipe Carousel) fades in from 0.18 to 0.32
                 if (leftSlider) {
@@ -497,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 8. SCROLL REVEAL ANIMATIONS
     // ==========================================
-    const revealElements = document.querySelectorAll('.service-card, .about-portrait, .about-text-content, .destination-card, .timeline-item, .contact-info-card, .contact-form-card, .blog-card');
+    const revealElements = document.querySelectorAll('.service-card, .about-portrait, .about-text-content, .destination-card, .timeline-item, .contact-info-card, .contact-form-card, .blog-card, .story-content, .sidebar-content');
     
     // Add default CSS styles for reveals dynamically
     const styleSheet = document.createElement("style");
