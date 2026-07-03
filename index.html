@@ -197,32 +197,335 @@
     </section>
 
     <!-- ==========================================
-       UNIVERSITY LOGO TICKER SLIDER
+       UNIVERSITY CAROUSEL SECTION (WIRE FRAME)
        ========================================== -->
-    <div class="uni-ticker-wrap" style="margin-top: 0; margin-bottom: 0; border-top: none;">
-        <div class="uni-ticker">
-            <!-- Original set of 5 logos -->
-            <div class="uni-ticker-item"><img src="assets/images/logo_unec.png" alt="UNEC"><span>UNEC</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_amu.png" alt="AMU"><span>AMU</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_bsu.png" alt="BSU"><span>BSU</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_uaac.png" alt="UAAC"><span>UAAC</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_aztu.png" alt="AzTU"><span>AzTU</span></div>
-            
-            <!-- Duplicated set for seamless loop -->
-            <div class="uni-ticker-item"><img src="assets/images/logo_unec.png" alt="UNEC"><span>UNEC</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_amu.png" alt="AMU"><span>AMU</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_bsu.png" alt="BSU"><span>BSU</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_uaac.png" alt="UAAC"><span>UAAC</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_aztu.png" alt="AzTU"><span>AzTU</span></div>
+    <section class="section-padding uni-carousel-section" style="background-color: #f8fafc; overflow: hidden; position: relative; border-bottom: 1px solid rgba(226, 232, 240, 0.8);">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-subtitle" style="font-weight: 800; color: var(--color-primary); letter-spacing: 1.5px;">STUDY IN AZERBAIJAN</span>
+                <h2 class="section-title" style="margin-top: 0.5rem; font-size: 2rem;">Affordable programmes offered at world ranking Universities</h2>
+                <div class="header-line"></div>
+            </div>
 
-            <!-- Triplicated for extra wide viewports -->
-            <div class="uni-ticker-item"><img src="assets/images/logo_unec.png" alt="UNEC"><span>UNEC</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_amu.png" alt="AMU"><span>AMU</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_bsu.png" alt="BSU"><span>BSU</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_uaac.png" alt="UAAC"><span>UAAC</span></div>
-            <div class="uni-ticker-item"><img src="assets/images/logo_aztu.png" alt="AzTU"><span>AzTU</span></div>
+            <!-- Static University Logo Navigation Row (Always shows all 5 logos) -->
+            <div class="uni-nav-row">
+                
+                <!-- Logo 1: UNEC -->
+                <div class="uni-nav-item active" data-slide-to="0">
+                    <div class="uni-nav-logo-circle">
+                        <img src="assets/images/logo_unec.png" alt="UNEC Logo">
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary-dark); transition: color 0.3s; margin-top: 0.5rem; display: block; text-align: center;">UNEC</span>
+                </div>
+
+                <!-- Logo 2: AMU -->
+                <div class="uni-nav-item" data-slide-to="1">
+                    <div class="uni-nav-logo-circle">
+                        <img src="assets/images/logo_amu.png" alt="AMU Logo">
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary-dark); transition: color 0.3s; margin-top: 0.5rem; display: block; text-align: center;">AMU</span>
+                </div>
+
+                <!-- Logo 3: BSU -->
+                <div class="uni-nav-item" data-slide-to="2">
+                    <div class="uni-nav-logo-circle">
+                        <img src="assets/images/logo_bsu.png" alt="BSU Logo">
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary-dark); transition: color 0.3s; margin-top: 0.5rem; display: block; text-align: center;">BSU</span>
+                </div>
+
+                <!-- Logo 4: UAAC -->
+                <div class="uni-nav-item" data-slide-to="3">
+                    <div class="uni-nav-logo-circle">
+                        <img src="assets/images/logo_uaac.png" alt="UAAC Logo">
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary-dark); transition: color 0.3s; margin-top: 0.5rem; display: block; text-align: center;">UAAC</span>
+                </div>
+
+                <!-- Logo 5: AzTU -->
+                <div class="uni-nav-item" data-slide-to="4">
+                    <div class="uni-nav-logo-circle">
+                        <img src="assets/images/logo_aztu.png" alt="AzTU Logo">
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary-dark); transition: color 0.3s; margin-top: 0.5rem; display: block; text-align: center;">AzTU</span>
+                </div>
+
+            </div>
+
+            <!-- Carousel Wrapper -->
+            <div class="uni-carousel-container" style="padding-top: 1rem;">
+                <div class="uni-carousel-track">
+                    
+                    <!-- Slide 1: UNEC -->
+                    <div class="uni-carousel-slide">
+                        <article class="blog-card" style="margin: 0; width: 100%;">
+                            <div class="blog-img-link" style="position: relative;">
+                                <span class="blog-card-category">Economics & Business</span>
+                                <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=600&q=80" alt="UNEC Campus" class="blog-card-img">
+                            </div>
+                            <div class="blog-card-body" style="padding: 2rem 1.75rem;">
+                                <h3 class="blog-card-title" style="font-size: 1.2rem; line-height: 1.4; font-weight: 700; margin-top: 0.5rem;"><a href="contact.html?subject=Admission%20Inquiry%20-%20UNEC">Azerbaijan State University of Economics (UNEC)</a></h3>
+                                <div class="uni-programmes-list">
+                                    <h4 class="programmes-header" style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-list-check"></i> Available Programmes:</h4>
+                                    <ul style="display: grid; grid-template-columns: 1fr; gap: 0.4rem; padding-left: 0; list-style: none;">
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Finance</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Economics</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Accounting</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Int. Logistics & Trade</li>
+                                    </ul>
+                                </div>
+                                <a href="contact.html?subject=Admission%20Inquiry%20-%20UNEC" class="blog-card-link" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">Inquire Admission <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 2: AMU -->
+                    <div class="uni-carousel-slide">
+                        <article class="blog-card" style="margin: 0; width: 100%;">
+                            <div class="blog-img-link" style="position: relative;">
+                                <span class="blog-card-category">Medicine & Healthcare</span>
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="AMU Campus" class="blog-card-img">
+                            </div>
+                            <div class="blog-card-body" style="padding: 2rem 1.75rem;">
+                                <h3 class="blog-card-title" style="font-size: 1.2rem; line-height: 1.4; font-weight: 700; margin-top: 0.5rem;"><a href="contact.html?subject=Admission%20Inquiry%20-%20AMU">Azerbaijan Medical University</a></h3>
+                                <div class="uni-programmes-list">
+                                    <h4 class="programmes-header" style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-list-check"></i> Available Programmes:</h4>
+                                    <ul style="display: grid; grid-template-columns: 1fr; gap: 0.4rem; padding-left: 0; list-style: none;">
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Medicine</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Dentistry</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Pharmacy</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Nursing</li>
+                                    </ul>
+                                </div>
+                                <a href="contact.html?subject=Admission%20Inquiry%20-%20AMU" class="blog-card-link" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">Inquire Admission <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 3: BSU -->
+                    <div class="uni-carousel-slide">
+                        <article class="blog-card" style="margin: 0; width: 100%;">
+                            <div class="blog-img-link" style="position: relative;">
+                                <span class="blog-card-category">Law & Humanities</span>
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="BSU Campus" class="blog-card-img">
+                            </div>
+                            <div class="blog-card-body" style="padding: 2rem 1.75rem;">
+                                <h3 class="blog-card-title" style="font-size: 1.2rem; line-height: 1.4; font-weight: 700; margin-top: 0.5rem;"><a href="contact.html?subject=Admission%20Inquiry%20-%20BSU">Baku State University</a></h3>
+                                <div class="uni-programmes-list">
+                                    <h4 class="programmes-header" style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-list-check"></i> Available Programmes:</h4>
+                                    <ul style="display: grid; grid-template-columns: 1fr; gap: 0.4rem; padding-left: 0; list-style: none;">
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Law</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Psychology</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> International Relations</li>
+                                    </ul>
+                                </div>
+                                <a href="contact.html?subject=Admission%20Inquiry%20-%20BSU" class="blog-card-link" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">Inquire Admission <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 4: UAAC -->
+                    <div class="uni-carousel-slide">
+                        <article class="blog-card" style="margin: 0; width: 100%;">
+                            <div class="blog-img-link" style="position: relative;">
+                                <span class="blog-card-category">Engineering & Tech</span>
+                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="UAAC Campus" class="blog-card-img">
+                            </div>
+                            <div class="blog-card-body" style="padding: 2rem 1.75rem;">
+                                <h3 class="blog-card-title" style="font-size: 1.2rem; line-height: 1.4; font-weight: 700; margin-top: 0.5rem;"><a href="contact.html?subject=Admission%20Inquiry%20-%20UAAC">Azerbaijan Architecture & Construction Uni</a></h3>
+                                <div class="uni-programmes-list">
+                                    <h4 class="programmes-header" style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-list-check"></i> Available Programmes:</h4>
+                                    <ul style="display: grid; grid-template-columns: 1fr; gap: 0.4rem; padding-left: 0; list-style: none;">
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Architecture</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Civil Engineering</li>
+                                    </ul>
+                                </div>
+                                <a href="contact.html?subject=Admission%20Inquiry%20-%20UAAC" class="blog-card-link" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">Inquire Admission <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 5: AzTU -->
+                    <div class="uni-carousel-slide">
+                        <article class="blog-card" style="margin: 0; width: 100%;">
+                            <div class="blog-img-link" style="position: relative;">
+                                <span class="blog-card-category">Engineering & Tech</span>
+                                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=600&q=80" alt="AzTU Campus" class="blog-card-img">
+                            </div>
+                            <div class="blog-card-body" style="padding: 2rem 1.75rem;">
+                                <h3 class="blog-card-title" style="font-size: 1.2rem; line-height: 1.4; font-weight: 700; margin-top: 0.5rem;"><a href="contact.html?subject=Admission%20Inquiry%20-%20AzTU">Azerbaijan Technical University (AzTU)</a></h3>
+                                <div class="uni-programmes-list">
+                                    <h4 class="programmes-header" style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-list-check"></i> Available Programmes:</h4>
+                                    <ul style="display: grid; grid-template-columns: 1fr; gap: 0.4rem; padding-left: 0; list-style: none;">
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Computer Eng.</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Electrical Eng.</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Info Security</li>
+                                        <li style="font-size: 0.85rem; color: var(--color-text-muted);"><i class="fa-solid fa-circle-check" style="color: #0ea5e9; margin-right: 0.35rem;"></i> Computer Science</li>
+                                    </ul>
+                                </div>
+                                <a href="contact.html?subject=Admission%20Inquiry%20-%20AzTU" class="blog-card-link" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">Inquire Admission <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Navigation dots (rendered only on tablet/mobile where not all cards fit) -->
+            <div class="uni-carousel-dots" style="display: none;"></div>
         </div>
-    </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.uni-carousel-container');
+            const track = document.querySelector('.uni-carousel-track');
+            const slides = document.querySelectorAll('.uni-carousel-slide');
+            const navItems = document.querySelectorAll('.uni-nav-item');
+            const dotsContainer = document.querySelector('.uni-carousel-dots');
+            let index = 0;
+            const slideCount = slides.length;
+
+            function getVisibleCount() {
+                if (window.innerWidth <= 768) return 1;
+                if (window.innerWidth <= 1024) return 2;
+                return 4; // 4 cards on desktop!
+            }
+
+            function setSlide(n) {
+                index = Math.min(Math.max(0, n), slideCount - 1);
+                updatePosition();
+                updateActiveLogo();
+                updateActiveDot();
+            }
+
+            function nextSlide() {
+                index++;
+                if (index >= slideCount) {
+                    index = 0;
+                }
+                updatePosition();
+                updateActiveLogo();
+                updateActiveDot();
+            }
+
+            function updatePosition() {
+                const containerWidth = container.getBoundingClientRect().width;
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 32;
+                
+                let amountToMove = index * (slideWidth + gap);
+                
+                // Centered peek on mobile (when visibleCount is 1)
+                const visibleCount = getVisibleCount();
+                if (visibleCount === 1) {
+                    const offset = (containerWidth - slideWidth) / 2;
+                    amountToMove = index * (slideWidth + gap) - offset;
+                }
+                
+                track.style.transform = `translateX(-${amountToMove}px)`;
+            }
+
+            function updateActiveLogo() {
+                navItems.forEach((item, idx) => {
+                    item.classList.toggle('active', idx === index);
+                });
+            }
+
+            function renderDots() {
+                const visibleCount = getVisibleCount();
+                if (visibleCount >= slideCount) {
+                    dotsContainer.style.display = 'none';
+                    return;
+                }
+                dotsContainer.style.display = 'flex';
+                dotsContainer.innerHTML = '';
+                const maxIndex = slideCount - visibleCount;
+                for (let i = 0; i <= maxIndex; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = `dot${i === index ? ' active' : ''}`;
+                    const slideIdx = i;
+                    dot.addEventListener('click', () => setSlide(slideIdx));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateActiveDot() {
+                const dots = dotsContainer.querySelectorAll('.dot');
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === index);
+                });
+            }
+
+            // Bind click handlers to static logos
+            navItems.forEach((item) => {
+                const targetIdx = parseInt(item.getAttribute('data-slide-to'), 10);
+                item.addEventListener('click', () => {
+                    setSlide(targetIdx);
+                    // Reset autoplay timer
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(nextSlide, 4500);
+                });
+            });
+
+            let slideInterval = setInterval(nextSlide, 4500);
+
+            // Pause on hover
+            container.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            container.addEventListener('mouseleave', () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 4500);
+            });
+
+            // Re-align on window resize
+            window.addEventListener('resize', () => {
+                renderDots();
+                updatePosition();
+            });
+
+            // Touch support for swiping
+            let startX = 0;
+            let currentX = 0;
+            let isSwiping = false;
+
+            container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isSwiping = true;
+                clearInterval(slideInterval);
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isSwiping) return;
+                currentX = e.touches[0].clientX;
+            }, { passive: true });
+
+            container.addEventListener('touchend', () => {
+                if (!isSwiping) return;
+                isSwiping = false;
+                const diffX = startX - currentX;
+                if (Math.abs(diffX) > 50) {
+                    if (diffX > 0) {
+                        nextSlide();
+                    } else {
+                        index--;
+                        if (index < 0) {
+                            index = slideCount - 1;
+                        }
+                        updatePosition();
+                        updateActiveLogo();
+                        updateActiveDot();
+                    }
+                }
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 4500);
+            });
+
+            // Initial setup
+            renderDots();
+            updateActiveLogo();
+            updatePosition();
+        });
+    </script>
 
     <!-- ==========================================
        3. SERVICES SECTION
