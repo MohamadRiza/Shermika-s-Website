@@ -28,7 +28,7 @@
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="azerbaijan.html" class="nav-link">Study in Azerbaijan</a>
+                <a href="azerbaijan.html" class="nav-link">Education</a>
                 <a href="blog.html" class="nav-link active">Blog & Insights</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
@@ -48,26 +48,86 @@
     <!-- ==========================================
        2. BLOG HERO
        ========================================== -->
-    <section class="about-hero">
-        <div class="cloud-container">
-            <svg class="cloud cloud-1" viewBox="0 0 100 100">
-                <path d="M 20 80 A 15 15 0 0 1 40 80 A 20 20 0 0 1 70 80 A 15 15 0 0 1 85 80 A 10 10 0 0 1 95 80 L 95 90 L 5 90 L 5 80 A 10 10 0 0 1 20 80 Z" />
-            </svg>
-            <svg class="cloud cloud-2" viewBox="0 0 100 100">
-                <path d="M 20 80 A 15 15 0 0 1 40 80 A 20 20 0 0 1 70 80 A 15 15 0 0 1 85 80 A 10 10 0 0 1 95 80 L 95 90 L 5 90 L 5 80 A 10 10 0 0 1 20 80 Z" />
-            </svg>
+    <section class="about-hero" style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.82) 45%, rgba(15, 23, 42, 0.3) 75%, rgba(15, 23, 42, 0.08) 100%), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1920&q=80');">
+        <div class="container">
+            <div class="about-hero-grid">
+                
+                <!-- Left: Biography Content -->
+                <div class="about-hero-left">
+                    <div class="about-hero-badge">
+                        <i class="fa-solid fa-pen-nib"></i> Insights &bull; Strategy &bull; Lectures
+                    </div>
+                    <h1 class="about-hero-title-main">
+                        Dr. Shermika's
+                        <span class="gradient-text">Insights</span>
+                    </h1>
+                    <p class="about-hero-subtitle-main">
+                        Explore strategic analysis on aviation, global tourism promotions, executive leadership, and academic lecture notes.
+                    </p>
+                    <div class="about-hero-buttons">
+                        <a href="#blog-section" class="btn btn-primary">Browse Articles <i class="fa-solid fa-arrow-down"></i></a>
+                        <a href="contact.html?subject=Collaboration%20Inquiry" class="btn btn-outline">
+                            Collaborate <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Quote Glass Card -->
+                <div class="about-hero-right">
+                    <div class="about-hero-quote-card">
+                        <i class="fa-solid fa-quote-left quote-icon" style="color: var(--color-primary-light);"></i>
+                        <p>Knowledge is the only asset that grows when shared.</p>
+                        <span class="quote-author">— Dr. Shermika Kuweju</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom: Key Stats -->
+            <div class="about-hero-stats">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-newspaper"></i></div>
+                    <div>
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Published Articles</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div>
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years of Strategy</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <div>
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Lecture Modules</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div>
+                        <div class="stat-number">5k+</div>
+                        <div class="stat-label">Monthly Readers</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container text-center">
-            <span class="section-subtitle">Insights & Travel Blog</span>
-            <h1 class="section-title">Knowledge Share</h1>
-            <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);">Articles on global destination marketing, aviation metrics, executive management, and travel guides.</p>
+
+        <!-- SVG Curve Divider -->
+        <div class="hero-curve-divider">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,20 Q720,80 1440,20 L1440,100 L0,100 Z" fill="#f8fafc"></path>
+            </svg>
         </div>
     </section>
 
     <!-- ==========================================
        3. MAIN BLOG SECTION (With Search & Filter)
        ========================================== -->
-    <section class="section-padding" style="background-color: #f8fafc;">
+    <section id="blog-section" class="section-padding" style="background-color: #f8fafc;">
         <div class="container">
             
             <!-- Controls row -->
@@ -221,7 +281,7 @@
                     <ul class="footer-links-list">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="azerbaijan.html">Study in Azerbaijan</a></li>
+                        <li><a href="azerbaijan.html">Education</a></li>
                         <li><a href="blog.html">Blog & Insights</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
